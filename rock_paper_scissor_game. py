@@ -2,33 +2,39 @@ import random
 
 # basic logics
 choice = ["rock", "paper", "scissor"]
+you_score = 0
+bot_score = 0
 
 while True:
         you = input("Enter Your Choice: ").lower()
         bot = random.choice(choice)
 
-        if (you == "exit"):
-                print("Thanks For Playing!")
-                break
-
-        # detect invalid choice
-
-        elif (you not in choice):
-                print("Result: Invalid Choice")
-
         # player wins
 
-        elif (you == "rock" and bot == "scissor" or you == "paper" and bot == "rock" or you == "scissor" and bot == "paper"):
+        if (you == "rock" and bot == "scissor" or you == "paper" and bot == "rock" or you == "scissor" and bot == "paper"):
                 print("Bot Choice:", bot)
                 print("Result: You Win!")
+                you_score += 1
 
         # bot wins
 
         elif (bot == "rock" and you == "scissor" or bot == "paper" and you == "rock" or bot == "scissor" and you == "paper"):
                 print("Bot Choice:", bot)
                 print("Result: Bot Win!")
+                bot_score += 1
 
         # if game tie
+
+        elif (you == "exit"):
+                print("You Score:", you_score)
+                print("Bot Score:", bot_score)
+                print("Thanks For Playing!")
+                break
+
+        # detect invalid choice
+
+        elif (you not in choice):
+                print("Invalid Choice")
 
         else:
                 print("Bot Choice:", bot)
