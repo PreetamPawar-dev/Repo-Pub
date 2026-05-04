@@ -1,0 +1,28 @@
+import random                                         
+# basic logics
+choice = ["rock", "paper", "scissor"]
+you = input("Enter Your Choice: ").lower()
+bot = random.choice(choice)
+
+# detect invalid choice
+
+if (you not in choice):
+        print("Invalid Choice")
+
+# player wins
+
+elif (you == "rock" and bot == "scissor" or you == "paper" and bot == "rock" or you == "scissor" and bot == "paper"):
+        print(bot)
+        print("You Win!")
+
+# bot wins
+
+elif (bot == "rock" and you == "scissor" or bot == "paper" and you == "rock" or bot == "scissor" and you == "paper"):
+        print(bot)
+        print("Bot Win!")
+
+# if game tie
+
+else:
+        print(bot)
+        print("Game Tie!")
