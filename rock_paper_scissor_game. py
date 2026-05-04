@@ -1,28 +1,30 @@
-import random                                         
+import random
+
 # basic logics
 choice = ["rock", "paper", "scissor"]
-you = input("Enter Your Choice: ").lower()
-bot = random.choice(choice)
 
-# detect invalid choice
+while True:                                                   you = input("Enter Your Choice: ").lower()
+        bot = random.choice(choice)
 
-if (you not in choice):
-        print("Invalid Choice")
+        # detect invalid choice
 
-# player wins
+        if (you not in choice):
+                print("Result: Invalid Choice")
 
-elif (you == "rock" and bot == "scissor" or you == "paper" and bot == "rock" or you == "scissor" and bot == "paper"):
-        print(bot)
-        print("You Win!")
+        # player wins
 
-# bot wins
+        elif (you == "rock" and bot == "scissor" or you == "paper" and bot == "rock" or you == "scissor" and bot == "paper"):
+                print("Bot Choice:", bot)
+                print("Result: You Win!")
 
-elif (bot == "rock" and you == "scissor" or bot == "paper" and you == "rock" or bot == "scissor" and you == "paper"):
-        print(bot)
-        print("Bot Win!")
+        # bot wins
 
-# if game tie
+        elif (bot == "rock" and you == "scissor" or bot == "paper" and you == "rock" or bot == "scissor" and you == "paper"):
+                print("Bot Choice:", bot)
+                print("Result: Bot Win!")
 
-else:
-        print(bot)
-        print("Game Tie!")
+        # if game tie
+
+        else:
+                print("Bot Choice:", bot)
+                print("Result: Game Tie!")
