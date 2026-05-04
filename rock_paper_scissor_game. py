@@ -3,12 +3,17 @@ import random
 # basic logics
 choice = ["rock", "paper", "scissor"]
 
-while True:                                                   you = input("Enter Your Choice: ").lower()
+while True:
+        you = input("Enter Your Choice: ").lower()
         bot = random.choice(choice)
+
+        if (you == "exit"):
+                print("Thanks For Playing!")
+                break
 
         # detect invalid choice
 
-        if (you not in choice):
+        elif (you not in choice):
                 print("Result: Invalid Choice")
 
         # player wins
